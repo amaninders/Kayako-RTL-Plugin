@@ -16,7 +16,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
             for (let index = 0; index < postArray.length; index++) {
                 var element = postArray[index];
                 var letters = /[\u0600-\u06FF]+$/
-                if ( element.innerText.match(letters)) {
+                if ( element.innerText.substring(0, 10).match(letters)) {
                 element.style["direction"] = "rtl";
                 }
                 else {
